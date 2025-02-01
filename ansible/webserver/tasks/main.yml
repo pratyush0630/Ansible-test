@@ -1,0 +1,12 @@
+- name: Install nginx
+  homebrew:
+    name: nginx
+    state: present
+
+- name: Copy index file
+  copy:
+    src: index.html
+    dest: /opt/homebrew/var/www/index.html
+
+- name: Start nginx
+  command: brew services start nginx
